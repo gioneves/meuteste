@@ -8,6 +8,20 @@
 
 app_server <- function(input, output, session) {
   
+  observeEvent(data()$user,{
+    showModal(modalDialog(
+      includeHTML(path = "htmls/modal.html"),
+      easyClose = TRUE,
+      footer = tagList(
+        actionButton(inputId = "intro", label = "OK", icon = icon("info-circle"))
+      )
+    ))
+  })
+  
+  observeEvent(input$intro,{
+    removeModal()
+  })
+  
   res_auth <- shinymanager::secure_server(
     check_credentials = shinymanager::check_credentials(
       data.frame(
@@ -29,20 +43,6 @@ app_server <- function(input, output, session) {
   
   data <- reactive({
     reactiveValuesToList(res_auth)
-  })
-  
-  observeEvent(data()$user,{
-    showModal(modalDialog(
-      includeHTML("htmls/modal.html"),
-      easyClose = TRUE,
-      footer = tagList(
-        actionButton(inputId = "intro", label = "OK", icon = icon("info-circle"))
-      )
-    ))
-  })
-  
-  observeEvent(input$intro,{
-    removeModal()
   })
   
 }

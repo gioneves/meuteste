@@ -21,20 +21,12 @@ app_ui <- function(request) {
 golem_add_external_resources <- function(){
   
   addResourcePath(
-    'www', system.file('app/www', package = "golem1")
+    'www', system.file('app/www', package = "testes")
   )
   
   tags$head(
     golem::activate_js(), 
-    tags$title("Hell Tattoo Dashboard"), # page title in navigator tab
-    
-    HTML(
-      "<title> Hell Tattoo Dashboard</title>
-    <link rel='shortcut icon' href='www/hell.png'></link>
-    <link rel='stylesheet' href='www/shiny.css'></link>
-    <script src='www/shiny.js'></script>
-    "
-    )
+    tags$title("Testando modal")# page title in navigator tab
     
     # Add here all the external resources
     # If you have a custom.css in the inst/app/www

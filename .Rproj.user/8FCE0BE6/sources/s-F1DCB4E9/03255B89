@@ -3,7 +3,7 @@
     "path": "~/testes/R/run_app.R",
     "project_path": "R/run_app.R",
     "type": "r_source",
-    "hash": "1222605579",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1639441886631.0,
@@ -12,7 +12,7 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "18,94",
+        "cursorPosition": "18,18",
         "scrollLine": "10"
     },
     "folds": "",
